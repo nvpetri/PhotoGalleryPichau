@@ -1,128 +1,140 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body{
+  }
+  
+  body {
     display: grid;
-    height: 105vh;
+    height: 100vh; 
     grid-template-rows: 150px 1fr 150px;
-    margin: 0px 400px 0px 400px;
+    margin: 0px 400px; 
     font-family: 'Delicious Handrawn', cursive;
     background-image: url(./img/fundo.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: grey;
 }
-
-header{
-    display: grid;
-}
-
-h1{
-    display: grid;
-    place-items: center;
-    place-content: center;
+  
+  header, footer {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  h1 {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
     color: #102333;
-}
-
-p + p{
+  }
+  
+  p + p {
     color: maroon;
-}
-
-main{
+  }
+  
+  main {
     display: grid;
     grid-template-rows: 4fr 2fr;
-    row-gap: 15px;
-}
-
-.fotos1{
+    gap: 15px;
+    animation: zoomIn 1s ease-in-out;
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .fotos1 {
     display: grid;
     grid-template-areas: 
-    "principal secundaria"
-    "principal secundaria";
+      "principal secundaria"
+      "principal secundaria";
     gap: 15px;
     grid-template-columns: 7fr 6fr;
-}
-
-.fotos1c{
+  }
+  
+  .fotos1c {
     grid-area: principal;
     background-image: url(./img/imgpp.jpg);
     background-size: cover;
-    border-style: solid;
-    border-color: #102333;
-    display: grid;
-    place-items: end start;
-}
-
-.infos {
+    border: 2px solid #102333; 
+    display: flex; 
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  
+  .informacoes {
     height: 3em;
     width: 100%;
     display: grid;
     grid-template-columns: 8fr 1fr;
     animation-duration: 2s;
-    animation-name: informacoes;
-}
-
-.informacoes {
-    background-color: rgb(16, 35, 51,0.8);;
-    display: grid;
+    animation-name: slideIn; 
+  }
+  
+  .informacoes p {
+    color: white;
+    font-size: 1em;
+    opacity: 1; 
+  }
+  
+  .comprar {
+    background-color: maroon;
+    display: flex; 
     justify-content: center;
     align-items: center;
-}
-
-.informacoes p {
-    color: white;
-    opacity: 1;
-    font-size: 1em;
-    opacity: 1;
-}
-
-.comprar {
-    background-color: maroon;
-    display: grid;
-    place-items: center;
-}
-
-img[alt~="botao"] {
+  }
+  
+  img[alt~="botao"] {
     height: 2.5em;
     width: 2.5em;
-}
-
-
-@keyframes informacoes{
-
-    0% {
-    transform: translateZ(0);
   }
-
-   100% {
-    transform: translateZ(10px);
-}
-
-} 
-
-.img__secundaria{
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .img__secundaria {
     grid-area: secundaria;
     display: grid;
     grid-template-areas: 
-    "img1 img2"
-    "img3 img4";
+      "img1 img2"
+      "img3 img4";
     column-gap: 15px;
     row-gap: 15px;
-}
-
-.img__secundaria *{
-    border-style: solid;
-    border-color: #102333;
-}
-
-.img1{
+  }
+  
+  .img__secundaria > * {
+    border: 2px solid #102333; 
+  }
+  
+  .img1 {
     background-image: url(./img/img1.jpg);
     background-size: cover;
     grid-area: img1;
-
-}
+  }
 
 .img2{
     background-image: url(./img/img2.jpg);
@@ -141,7 +153,7 @@ img[alt~="botao"] {
     background-image: url(./img/img4.jpg);
     background-size: cover;
     grid-area: img4;
-
+    animation: zoomInAndFadeIn 1s ease-in-out;
 }
 
 .faixa__secundaria{
@@ -149,16 +161,26 @@ img[alt~="botao"] {
     column-gap: 15px;
     grid-template-columns: 2fr 2fr 3fr;
 }
-
-.faixa__secundaria *{
+.faixa__secundaria > *{
     border-style: solid;
     border-color: #102333;
-}
+  }
 
-.img5{
+  .img5{
     background-image: url(./img/img5.jpg);
     background-size: cover;
+    animation: zoomInAndFadeIn 1s ease-in-out;
 }
+@keyframes zoomInAndFadeIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
 
 .img6{
     background-image: url(./img/img6.jpg);
@@ -169,6 +191,7 @@ img[alt~="botao"] {
     background-image: url(./img/img7.jpg);
     background-size: cover;
 }   
+
 
 footer{
     display: flex;
@@ -186,7 +209,35 @@ footer{
     display: flex;
     justify-content: center;
 }
+.ver__mais:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+  }
+  
 
 .ver__mais p{
     color: white;
 }
+.fotos1c, .img1, .img2, .img3, .img4, .img5, .img6, .img7 {
+    -webkit-animation: zoomInAndFadeIn 1s ease-in-out;
+    -moz-animation: zoomInAndFadeIn 1s ease-in-out;
+    animation: zoomInAndFadeIn 1s ease-in-out;
+  }
+  
+  
+  @keyframes zoomInAndFadeIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .fotos1c img:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+  }
+  
