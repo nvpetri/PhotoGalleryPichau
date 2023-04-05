@@ -41,6 +41,7 @@
   
   p + p {
     color: maroon;
+    margin-left: 20px;
   }
   
   main {
@@ -81,39 +82,35 @@
   }
   
   .informacoes {
-    height: 3em;
+    height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 8fr 1fr;
+    margin-top: 100%;
+    grid-template-columns: 100% ;
     animation-duration: 2s;
     animation-name: slideIn; 
+    opacity: 0;
+    transition-duration: .3s;
   }
+  @keyframes slideIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .informacoes:hover {
+    opacity: 1;
+}
   
   .informacoes p {
+    background-color: rgba(0, 2 , 200, 0.5) ;
     color: white;
     font-size: 1em;
     opacity: 1; 
-  }
-  
-  .comprar {
-    background-color: maroon;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-  }
-  
-  img[alt~="botao"] {
-    height: 2.5em;
-    width: 2.5em;
-  }
-  
-  @keyframes slideIn {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
   }
   
   .img__secundaria {
@@ -153,7 +150,6 @@
     background-image: url(./img/img4.jpg);
     background-size: cover;
     grid-area: img4;
-    animation: zoomInAndFadeIn 1s ease-in-out;
 }
 
 .faixa__secundaria{
@@ -169,18 +165,7 @@
   .img5{
     background-image: url(./img/img5.jpg);
     background-size: cover;
-    animation: zoomInAndFadeIn 1s ease-in-out;
 }
-@keyframes zoomInAndFadeIn {
-    0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
 
 .img6{
     background-image: url(./img/img6.jpg);
@@ -219,25 +204,8 @@ footer{
 .ver__mais p{
     color: white;
 }
-.fotos1c, .img1, .img2, .img3, .img4, .img5, .img6, .img7 {
-    -webkit-animation: zoomInAndFadeIn 1s ease-in-out;
-    -moz-animation: zoomInAndFadeIn 1s ease-in-out;
-    animation: zoomInAndFadeIn 1s ease-in-out;
-  }
-  
-  
-  @keyframes zoomInAndFadeIn {
-    0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-  .fotos1c img:hover {
-    transform: scale(1.1);
-    transition: transform 0.5s ease-in-out;
-  }
-  
+.fotos1c:hover, .img1:hover, .img2:hover, .img3:hover, .img4:hover, .img5:hover, .img6:hover, .img7:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
+}
