@@ -5,9 +5,10 @@
   }
   
   body {
+    overflow: hidden;
     display: grid;
     height: 100vh; 
-    grid-template-rows: 150px 1fr 150px;
+    grid-template-rows: 90px 1fr 150px;
     margin: 0px 400px; 
     font-family: 'Delicious Handrawn', cursive;
     background-image: url(./img/fundo.jpg);
@@ -21,6 +22,7 @@
     justify-content: center;
     align-items: center;
     animation: fadeIn 1s ease-in-out;
+    
   }
   
   @keyframes fadeIn {
@@ -86,8 +88,9 @@
     width: 120%;
     display: grid;
     margin-top: 100%;
-    margin-left: -32%;
-    margin-right: 20%;
+    margin-left: -20%;
+    margin-right: 60%;
+    margin-bottom: -10%;
     grid-template-columns: 100% ;
     animation-duration: 2s;
     animation-name: slideIn; 
@@ -111,11 +114,11 @@
   .informacoes p {
     background-color: rgba(0, 2 , 200, 0.5) ;
     color: white;
-    font-size: 20px;
+    font-size: 22px;
     opacity: 1; 
   }
   .MAIS1{
-    margin-left: 80%;
+    margin-left: 87%;
     background-color: rgba(0, 2 , 200, 0.5);
     display: grid;
     place-items: center;
