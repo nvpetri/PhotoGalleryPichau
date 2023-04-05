@@ -82,10 +82,12 @@
   }
   
   .informacoes {
-    height: 100%;
-    width: 100%;
+    height: 150%;
+    width: 120%;
     display: grid;
     margin-top: 100%;
+    margin-left: -32%;
+    margin-right: 20%;
     grid-template-columns: 100% ;
     animation-duration: 2s;
     animation-name: slideIn; 
@@ -109,9 +111,37 @@
   .informacoes p {
     background-color: rgba(0, 2 , 200, 0.5) ;
     color: white;
-    font-size: 1em;
+    font-size: 20px;
     opacity: 1; 
   }
+  .MAIS1{
+    margin-left: 80%;
+    background-color: rgba(0, 2 , 200, 0.5);
+    display: grid;
+    place-items: center;
+    align-items: center;
+    animation-duration: 2s;
+    animation-name: slideIn; 
+    opacity: 0;
+    transition-duration: .3s;
+}
+@keyframes slideIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.MAIS1:hover {
+  opacity: 1;
+}
+img[alt~="botao"] {
+  height: 2em;
+  width: 2em;
+}
   
   .img__secundaria {
     grid-area: secundaria;
