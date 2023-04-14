@@ -9,7 +9,7 @@
     display: grid;
     height: 100vh; 
     grid-template-rows: 90px 1fr 150px;
-    margin: 0px 400px; 
+    margin: 0px 100px; 
     font-family: 'Delicious Handrawn', cursive;
     background-image: url(./img/fundo.jpg);
     background-size: cover;
